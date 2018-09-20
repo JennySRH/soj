@@ -1,0 +1,4 @@
+﻿  源.cpp
+e:\study\github\soj\soj_1001\soj_1001\源.cpp(13): warning C4018: “<”: 有符号/无符号不匹配
+e:\study\github\soj\soj_1001\soj_1001\源.cpp(25): warning C4018: “<”: 有符号/无符号不匹配
+  soj_1001.vcxproj -> E:\study\github\soj\soj_1001\Debug\soj_1001.exe
