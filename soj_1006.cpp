@@ -3,20 +3,20 @@ using namespace std;
 template <typename T> class Queue {
 public:
 	Queue() {
-		rear = front = count = 0;
+		rear = head = count = 0;
 	}
 	~Queue() {}
 	Queue(const Queue &rhs) {
-		rear = front = 0;
+		rear = head = 0;
 		count = 0;
-		for (int i = 0; i < count; i++) {
+		for (int i = 0; i < rhs.count; i++) {
 			push(rhs[i]);
 		}
 	}
 	const Queue & operator = (const Queue &rhs) {
 		count = 0;
-		front = rear = 0;
-		for (int i = 0; i < count; i++) {
+		head = rear = 0;
+		for (int i = 0; i < rhs.count; i++) {
 			push(rhs[i]);
 		}
 	}
@@ -24,7 +24,7 @@ public:
 		return (count == 0);
 	}
 	bool full()const {
-		return ((rear+1)%100 == front%100);
+		return ((rear + 1) % 100 == head % 100);
 	}
 	int size()const {
 		return count;
@@ -42,19 +42,19 @@ public:
 		if (empty()) {
 			return false;
 		}
-		front = (front + 1) % 100;
+		head = (head + 1) % 100;
 		count--;
 		return true;
 	}
 	const T & front()const {
-		return arr[front];
+		return arr[head];
 	}
-	T operator[](int i) {
-		return arr[(front + i) % 100];
+	T operator[](int i) const {
+		return arr[(head + i) % 100];
 	}
 private:
 	T arr[100];
-	int front, rear;
+	int head, rear;
 	int count;
 	//using a static array of size 100.   
 
@@ -68,6 +68,6 @@ int main() {
 	cout << a.size() << endl;
 	cout << a.front() << endl;
 	Queue<int> s = a;
-	cout << s.front() << endl;
+	cout << s.size() << endl;
 	system("pause");
 }
