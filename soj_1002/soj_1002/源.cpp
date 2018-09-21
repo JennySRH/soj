@@ -68,7 +68,7 @@ int main() {
 			
 		}
 		if (!s.empty()&& flag == true) {
-			cout << "NO" << endl;
+			cout << "No" << endl;
 		}
 		else if (flag == true) {
 			cout << "Yes" << endl;
